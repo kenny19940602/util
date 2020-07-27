@@ -1,0 +1,9 @@
+
+D
+java:S1905")Remove this unnecessary cast to "String".(øºìñûÿÿÿÿ
+K
+java:S3740_"/Provide the parametrized type for this generic.(Ó·š8’øø¸.
+U
+java:S3878"8Remove this array creation and simply pass the elements.(çÂ‚¦8’øø¸.
+J
+java:S1604="(Make this anonymous inner class a lambda(·ÖÊüÿÿÿÿ8Èöâù¸.
