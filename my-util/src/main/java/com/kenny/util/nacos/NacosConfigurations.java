@@ -34,7 +34,7 @@ public class NacosConfigurations implements ImportAware {
 
     @Override
     public void setImportMetadata(AnnotationMetadata annotationMetadata) {
-        this.annotationAttributes = annotationMetadata.getAnnotationAttributes("com.nacos.EnableNacosConfigClient");
+        this.annotationAttributes = annotationMetadata.getAnnotationAttributes("com.kenny.util.nacos.EnableNacosConfigClient");
     }
 
     public String getDataId() {
