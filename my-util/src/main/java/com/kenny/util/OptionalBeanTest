@@ -1,4 +1,4 @@
-package com.spaceon.gms.stance.util;
+package com.kenny.util;
 
 public class OptionalBeanTest {
 
