@@ -1,0 +1,91 @@
+package com.spaceon.gms.stance.util;
+
+public class OptionalBeanTest {
+
+    public static void main(String[] args) {
+
+        User axin = new User();
+        axin.setSchool(new School());
+
+
+        // 1. 基本调用
+
+        String value1 = OptionalBean.ofNullable(axin)
+
+                .getBean(User::getSchool)
+
+                .getBean(User.School::getAdress).get();
+
+        System.out.println(value1);
+
+        // 2. 扩展的 isPresent方法 用法与 Optional 一样
+
+        boolean present = OptionalBean.ofNullable(axin)
+
+                .getBean(User::getSchool)
+
+                .getBean(User.School::getAdress).isPresent();
+
+        System.out.println(present);
+
+        // 3. 扩展的 ifPresent 方法
+
+        OptionalBean.ofNullable(axin)
+
+                .getBean(User::getSchool)
+
+                .getBean(User.School::getAdress)
+
+                .ifPresent(adress -> System.out.println(String.format("地址存在:%s", adress)));
+
+        // 4. 扩展的 orElse
+
+        String value2 = OptionalBean.ofNullable(axin)
+
+                .getBean(User::getSchool)
+
+                .getBean(User.School::getAdress).orElse("家里蹲");
+
+        System.out.println(value2);
+
+        // 5. 扩展的 orElseThrow
+
+        try {
+
+            String value3 = OptionalBean.ofNullable(axin)
+
+                    .getBean(User::getSchool)
+
+                    .getBean(User.School::getAdress).orElseThrow(() -> new RuntimeException("空指针了"));
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+}
+class User{
+
+    public static School School;
+
+    public com.spaceon.gms.stance.util.School getSchool() {
+        return School;
+    }
+
+    public static void setSchool(com.spaceon.gms.stance.util.School school) {
+        School = school;
+    }
+}
+class School{
+    String address;
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAdress(School school) {
+        return address;
+    }
+}
