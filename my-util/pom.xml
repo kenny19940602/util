@@ -93,4 +93,36 @@
             </plugin>
         </plugins>
     </build>
+         <!--    <profiles>-->
+<!--        &lt;!&ndash; 开发环境 &ndash;&gt;-->
+<!--        <profile>-->
+<!--            <id>dev</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
+<!--            <properties>-->
+<!--                <spring.profiles.active>dev</spring.profiles.active>-->
+<!--            </properties>-->
+<!--        </profile>-->
+<!--        &lt;!&ndash; 测试环境 &ndash;&gt;-->
+<!--        <profile>-->
+<!--            <id>test</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--            <properties>-->
+<!--                <spring.profiles.active>test</spring.profiles.active>-->
+<!--            </properties>-->
+<!--        </profile>-->
+<!--        &lt;!&ndash; 生产环境 &ndash;&gt;-->
+<!--        <profile>-->
+<!--            <id>prod</id>-->
+<!--            <activation>-->
+<!--                <activeByDefault>false</activeByDefault>-->
+<!--            </activation>-->
+<!--            <properties>-->
+<!--                <spring.profiles.active>prod</spring.profiles.active>-->
+<!--            </properties>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 </project>
