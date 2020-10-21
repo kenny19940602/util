@@ -1,4 +1,4 @@
-package com.spaceon.gms.stance.util;
+package com.kenny.util;
 
 import java.util.Objects;
 import java.util.function.Consumer;
