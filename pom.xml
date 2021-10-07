@@ -27,7 +27,7 @@
         <kafka.clients>0.10.2.0</kafka.clients>
         <commons.collections4>4.4</commons.collections4>
         <json.flattener>0.1.0</json.flattener>
-        <snakeyaml>1.25</snakeyaml>
+        <snakeyaml>1.26</snakeyaml>
     </properties>
 
     <dependencyManagement>
