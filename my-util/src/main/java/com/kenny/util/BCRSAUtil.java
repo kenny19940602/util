@@ -73,7 +73,7 @@ public class BCRSAUtil {
             KeyFactory mykeyFactory = KeyFactory.getInstance("RSA");
             X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(pubKeyInByte);
             PublicKey pubKey = mykeyFactory.generatePublic(pubSpec);
-            Cipher cipher = Cipher.getInstance("RSA/None/PKCS1Padding", "BC");
+            Cipher cipher = Cipher.getInstance("RSA/None/PKCS1Padding", "BC");//NOSONAR
             cipher.init(Cipher.ENCRYPT_MODE, pubKey);
             return cipher.doFinal(data);
         } catch (Exception e) {

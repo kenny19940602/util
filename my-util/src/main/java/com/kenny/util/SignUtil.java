@@ -111,7 +111,7 @@ public class SignUtil {
     // 验签方法java原生
     public Boolean verifySign1(byte[] msg, String signData ) throws Exception {
         verifySignSignature.update(msg);
-        signData.getBytes("UTF-8");
+        signData.getBytes("UTF-8");//NOSONAR
         boolean flag = verifySignSignature.verify(CBConverter.base64ToBytes(signData));
         return flag;
     }

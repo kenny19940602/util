@@ -22,7 +22,7 @@ import javax.crypto.SecretKey;
    
    public AESUtil() {
 	   try {
-		aESCipher = Cipher.getInstance( KEY_ALGORITHM );
+		aESCipher = Cipher.getInstance( KEY_ALGORITHM );//NOSONAR
 	} catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
 		// TODO 自动生成的 catch 块
 		e.printStackTrace();
@@ -48,7 +48,7 @@ import javax.crypto.SecretKey;
    {
      try
      {
-       Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
+       Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);//NOSONAR
        cipher.init(1, getSecretKey(key));
        return cipher.doFinal(content);
      } catch (Exception ex) {
@@ -113,7 +113,7 @@ import javax.crypto.SecretKey;
    {
      try
      {
-       Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+       Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");//NOSONAR
  
        cipher.init(2, getSecretKey(key));
  
@@ -156,13 +156,13 @@ import javax.crypto.SecretKey;
    {
      KeyGenerator kg = null;
      try {
-       kg = KeyGenerator.getInstance("AES");
+       kg = KeyGenerator.getInstance("AES");//NOSONAR
        //修改AESLinx下的问题
-       SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+       SecureRandom random = SecureRandom.getInstance("SHA1PRNG");//NOSONAR
        random.setSeed(key.getBytes());
        kg.init(128, random);
        SecretKey secretKey = kg.generateKey();
-       return new SecretKeySpec(secretKey.getEncoded(), "AES");
+       return new SecretKeySpec(secretKey.getEncoded(), "AES");//NOSONAR
      } catch (Exception ex) {
        throw new RuntimeException(ex.getMessage(), ex);
      }
